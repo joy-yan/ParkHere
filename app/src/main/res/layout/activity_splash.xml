@@ -4,14 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/bg_yellow_car_parking"
     >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="31dp"
-        tools:ignore="MissingConstraints" />
+    <FrameLayout
+        android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:src="@drawable/bg_yellow_car_parking" android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_marginTop="56dp"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/logo"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="31dp"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>
