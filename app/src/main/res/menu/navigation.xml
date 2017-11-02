@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_market"
+        android:icon="@drawable/ic_local_parking_black_24dp"
+        android:orderInCategory="0"
+        android:title="@string/title_market" />
+
+    <item
+        android:id="@+id/navigation_buyer"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:orderInCategory="1"
+        android:title="@string/title_buyer" />
+
+    <item
+        android:id="@+id/navigation_owner"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:orderInCategory="2"
+        android:title="@string/title_owner" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:orderInCategory="3"
+        android:title="@string/title_settings" />
+
+</menu>

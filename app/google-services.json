@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "25734157579",
+    "firebase_url": "https://parkme-6a70e.firebaseio.com",
+    "project_id": "parkme-6a70e",
+    "storage_bucket": "parkme-6a70e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25734157579:android:f04a81a19214da4b",
+        "android_client_info": {
+          "package_name": "cs160.sjsu.edu.parkme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25734157579-j6o2ufrhr5dr6qfj4vb147slm70ijh1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cs160.sjsu.edu.parkme",
+            "certificate_hash": "7824dec9cafce346cd5c0686d9939d61b053ef3b"
+          }
+        },
+        {
+          "client_id": "25734157579-d1hq39j80hcpqnukbuo3vraek5p99b5s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBOEemJM6VwFFadtWWsqlZdEebx6955Sc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25734157579-d1hq39j80hcpqnukbuo3vraek5p99b5s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

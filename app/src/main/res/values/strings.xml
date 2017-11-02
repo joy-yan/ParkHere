@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ParkHere</string>
+    <string name="title_market">Market</string>
+    <string name="title_buyer">Buyer</string>
+    <string name="title_owner">Owner</string>
+    <string name="market">Market</string>
+    <string name="loading">Loading ... </string>
+    <string name="auth_failed">Authentification Failed</string>
+    <string name="email_account_creation_error">Failed to create email account.</string>
+    <string name="text_already_have_account">The account exists already</string>
+    <string name="button_sign_in">Sign In</string>
+    <string name="title_activity_create_account">Create Account</string>
+    <string name="hint_enter_password">Enter Your Password</string>
+    <string name="image_view_logo_image">ParkMe</string>
+    <string name="hint_enter_email">Enter Your Email</string>
+    <string name="button_signin_with_password">Sign In With Password</string>
+    <string name="text_dont_have_account">Account doesn\'t exist</string>
+    <string name="button_create_account">Create Account</string>
+    <string name="title_settings">Settings</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/parkSpotImageView"
+        android:layout_margin="@dimen/list_item_view_padding"
+        android:src="@drawable/ic_parking_spot_24"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/list_item_view_padding"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/parkSpotDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="University Name"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/parkSpotAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One Cuisine Type"
+            android:layout_below="@+id/parkSpotDesc"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic"/>
+    </LinearLayout>
+
+
+</LinearLayout>
