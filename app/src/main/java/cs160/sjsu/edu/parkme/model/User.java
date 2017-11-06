@@ -1,5 +1,7 @@
 package cs160.sjsu.edu.parkme.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by joyyan on 11/5/17.
  */

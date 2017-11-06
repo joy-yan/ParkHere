@@ -26,8 +26,12 @@ public class ParkingSpot {
     public String daily_rate = "";
 
     public String start_date = "";
+    public String end_date = "";
+    public String start_time = "";
+    public String end_time = "";
 
-    public String durantion = "";
+
+    public String uid = "";
 
     public ParkingSpot() {}
 
@@ -42,6 +46,14 @@ public class ParkingSpot {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public void setAddress(String address) {
@@ -88,13 +100,32 @@ public class ParkingSpot {
         this.start_date = start_date;
     }
 
-    public String getDurantion() {
-        return durantion;
+    public String getEndDate() {
+        return end_date;
     }
 
-    public void setDurantion(String durantion) {
-        this.durantion = durantion;
+    public void setEndDate(String end_date) {
+        this.end_date = end_date;
     }
+
+
+    public void setStartTime(String start_time) {
+        this.start_time = start_time;
+    }
+
+    public String getStartTime() {
+        return start_time;
+    }
+
+    public void setEndTime(String end_time) {
+        this.start_time = start_time;
+    }
+
+    public String getEndTime() {
+        return end_time;
+    }
+
+
 
     @Override
     public String toString() {

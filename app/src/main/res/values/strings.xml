@@ -22,7 +22,7 @@
     <string name="submit_order">Submit Order!</string>
     <string name="parking_address">Address: </string>
     <string name="parking_city">City: </string>
-    <string name="parking_ads_start_date">Select Start Date: </string>
+    <string name="parking_ads_start_date">Start Date: </string>
     <string name="parking_ads_duration">Offering Days: </string>
 
     <string name="parking_end">End at: </string>
@@ -30,5 +30,10 @@
     <string name="create_parking_ads">Create Parking Ads:</string>
     <string name="parking_description">Decription:</string>
     <string name="parking_daily_rate">Daily Rate ($):</string>
+    <string name="parking_ads_end_date">End Date:</string>
+    <string name="parking_ads_start_time">Time:</string>
+    <string name="firebase_image_upload_failure">Unable to upload image.</string>
+    <string name="firebase_new_ads_success">Create New Ad Successfully!</string>
+    <string name="firebase_image_upload_success">Image Uploaded Successfully!</string>
 
 </resources>

@@ -43,7 +43,7 @@ public class ParkingSpotListViewHolder extends RecyclerView.ViewHolder
         TextView textViewItemDesc = (TextView) mView.findViewById(R.id.parkSpotDesc);
         TextView textViewItemLoc = (TextView) mView.findViewById(R.id.parkSpotAddress);
         ImageStreamingUtil.downloadFromFirebaseStorage(mContext,
-                FirebaseStorage.getInstance().getReference().child(Constants.FIREBASE_STORAGE_PARKINGSPOT_PHOTOS +item.getThumbUrl()), mItemImageView);
+                FirebaseStorage.getInstance().getReference().child(Constants.FIREBASE_STORAGE_PARKINGSPOT_PHOTOS +item.getPhotoUrl()), mItemImageView);
 
         textViewItemDesc.setText(item.toString());
         textViewItemLoc.setText(item.getAddress());
