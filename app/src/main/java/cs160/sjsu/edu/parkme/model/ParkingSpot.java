@@ -12,105 +12,97 @@ import org.parceler.Parcel;
 @Parcel
 public class ParkingSpot {
 
-    private String name;
 
-    private String address;
+    public String parkingSpotId = "";
 
-    private String phone;
+    public String address = "";
 
-    private String ParkSpotUrl;
+    public String city = "";
 
-    private String thumbUrl;
+    public String description = "";
 
-    private String app_fields;
+    public String photoUrl = "";
 
-    private String app_due;
+    public String daily_rate = "";
+
+    public String start_date = "";
+
+    public String durantion = "";
 
     public ParkingSpot() {}
 
 
-    public ParkingSpot(String name, String address, String phone, String ParkSpotUrl,
-                       String thumbUrl, String application_due, String app_fields) {
-        this.name = name;
-        this.address = address;
-        this.phone = phone;
-        this.app_fields = app_fields;
-        this.ParkSpotUrl = ParkSpotUrl;
-        this.thumbUrl = thumbUrl;
-        this.app_due = application_due;
+    public String getParkingSpotId() {
+        return parkingSpotId;
     }
 
-    public String getApp_fields() {
-        return app_fields;
-    }
-
-    public void setApp_fields(String app_fields) {
-        this.app_fields = app_fields;
-    }
-
-    public String getApp_due() {
-        return app_due;
-    }
-
-    public void setApp_due(String app_due) {
-        this.app_due = app_due;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setParkingSpotId(String parkingSpotId) {
+        this.parkingSpotId = parkingSpotId;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String location) {
-        this.address = location;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getCity() {
+        return city;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getParkSpotUrl() {
-        return ParkSpotUrl;
+    public String getDescription() {
+        return description;
     }
 
-    public void setParkSpotUrl(String ParkSpotUrl) {
-        this.ParkSpotUrl = ParkSpotUrl;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getThumbUrl() {
-        return thumbUrl;
+    public String getPhotoUrl() {
+        return photoUrl;
     }
 
-    public void setThumbUrl(String thumbUrl) {
-        this.thumbUrl = thumbUrl;
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
-    public String getAppDue() {
-        return app_due;
+    public String getDailyRate() {
+        return daily_rate;
     }
 
-    public void setAppDue(String application_due) {
-        this.app_due = application_due;
+    public void setDailyRate(String daily_rate) {
+        this.daily_rate = daily_rate;
+    }
+
+    public String getStartDate() {
+        return start_date;
+    }
+
+    public void setStartDate(String start_date) {
+        this.start_date = start_date;
+    }
+
+    public String getDurantion() {
+        return durantion;
+    }
+
+    public void setDurantion(String durantion) {
+        this.durantion = durantion;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(name + "\n")
-                .append("Application Deadline: " + app_due + "\n")
-                .append("Phone: " + phone + "\n")
-                .append("Website: " + ParkSpotUrl + "\n");
+//        sb.append(name + "\n")
+//                .append("Address: " + app_due + "\n")
+//                .append("Phone: " + phone + "\n")
+//                .append("Website: " + ParkSpotUrl + "\n");
         return sb.toString();
     }
 
@@ -120,9 +112,9 @@ public class ParkingSpot {
         if (!(o instanceof ParkingSpot)) {
             return false;
         }
-        ParkingSpot ParkSpot = (ParkingSpot) o;
-        return name.equals(ParkSpot.getName())
-                && address.equals(ParkSpot.address);
+        ParkingSpot parkSpot = (ParkingSpot) o;
+        return parkingSpotId.equals(parkSpot.parkingSpotId)
+                && address.equals(parkSpot.address);
     }
 }
 

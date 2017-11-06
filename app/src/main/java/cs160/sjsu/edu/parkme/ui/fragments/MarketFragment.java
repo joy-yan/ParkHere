@@ -3,28 +3,16 @@ package cs160.sjsu.edu.parkme.ui.fragments;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 
 import cs160.sjsu.edu.parkme.R;
-import cs160.sjsu.edu.parkme.model.ParkingSpot;
-import cs160.sjsu.edu.parkme.ui.adapter.ParkingSpotListRecyclerAdapter;
-import cs160.sjsu.edu.parkme.ui.adapter.ParkingSpotListViewHolder;
-import cs160.sjsu.edu.parkme.utils.Constants;
-import cs160.sjsu.edu.parkme.utils.Utils;
+import cs160.sjsu.edu.parkme.adapter.ParkingSpotListRecyclerAdapter;
 
 /**
  * Created by joyyan on 11/2/17.

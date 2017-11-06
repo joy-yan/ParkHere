@@ -88,7 +88,7 @@ public class LoginActivity extends BaseActivity implements
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -163,6 +163,21 @@ public class LoginActivity extends BaseActivity implements
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+
+    @Override
+    protected void initVariables() {
+
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    protected void loadData() {
+
     }
     // [END on_stop_remove_listener]
 

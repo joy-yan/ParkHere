@@ -9,6 +9,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
+import com.vansuita.pickimage.bean.PickResult;
+import com.vansuita.pickimage.listeners.IPickResult;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
@@ -19,7 +22,8 @@ import cs160.sjsu.edu.parkme.ui.fragments.ProfileFragment;
 import cs160.sjsu.edu.parkme.utils.Utils;
 
 
-public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class MainActivity extends BaseActivity implements
+        ViewPager.OnPageChangeListener {
 
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
@@ -30,14 +34,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
-        viewPager.addOnPageChangeListener(this);
     }
 
 
@@ -50,6 +48,25 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             return true;
         }
     };
+
+    @Override
+    protected void initVariables() {
+
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        viewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    protected void loadData() {
+
+    }
 
 
     /**

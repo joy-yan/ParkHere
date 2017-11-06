@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height = "wrap_content">
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_margin="20dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/submit_order">
+        </Button>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/dateLayout"
+            android:layout_below="@id/submitButton">
+
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/dateLayout"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/textLayout">
+
+            <TextView
+                android:id="@+id/textTimerStartView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/startTime"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textTimerEndView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/endTime"
+                android:background="@color/colorAccent"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/textLayout"
+            android:id="@+id/timerLayout">
+
+            <TimePicker
+                android:id="@+id/timeStartPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:timePickerMode="spinner"/>
+
+            <TimePicker
+                android:id="@+id/timeEndPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:timePickerMode="spinner" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
