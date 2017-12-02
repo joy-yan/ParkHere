@@ -87,6 +87,7 @@ public class LoginActivity extends BaseActivity implements
 
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -400,7 +401,7 @@ public class LoginActivity extends BaseActivity implements
         startActivity(intent);
     }
 
-    public void onSignInPressed(View viwe) {
+    public void onSignInPressed(View view) {
         signInWithEmail(mEmailField.getText().toString(),
                 mPasswordField.getText().toString());
     }

@@ -9,17 +9,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
-import com.vansuita.pickimage.bean.PickResult;
-import com.vansuita.pickimage.listeners.IPickResult;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
-import cs160.sjsu.edu.parkme.ui.fragments.BuyerFragment;
+import cs160.sjsu.edu.parkme.ui.fragments.CartFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.MarketFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.OwnerFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.ProfileFragment;
-import cs160.sjsu.edu.parkme.utils.Utils;
 
 
 public class MainActivity extends BaseActivity implements
@@ -84,16 +80,12 @@ public class MainActivity extends BaseActivity implements
 
             switch (position) {
                 case 0:
-                    Utils.showToast(getApplicationContext(), "market");
                     return MarketFragment.newInstance();
                 case 1:
-                    Utils.showToast(getApplicationContext(), "buyer");
-                    return BuyerFragment.newInstance();
+                    return CartFragment.newInstance();
                 case 2:
-                    Utils.showToast(getApplicationContext(), "owner");
                     return OwnerFragment.newInstance();
                 case 3:
-                    Utils.showToast(getApplicationContext(), "settings");
                     return ProfileFragment.newInstance();
             }
             return null;

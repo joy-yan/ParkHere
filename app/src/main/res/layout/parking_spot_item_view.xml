@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:text="University Name"
+            android:text="Parking Spot Description"
             android:textColor="@color/colorPrimary"/>
 
         <TextView

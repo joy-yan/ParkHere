@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.DetailFragment">
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="571dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="North Garage 3A"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_parking_spot_24"
+            tools:ignore="VectorDrawableCompat"
+            tools:layout_width="match_parent" />
+
+        <RatingBar
+            style="@style/Widget.AppCompat.RatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Price: $4/day"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1 Washington Sq, San Jose, CA 95192" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/schedule" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="0sp"
+            android:paddingBottom="10dp"
+            android:paddingEnd="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:text="This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees.This parking spot is located on the 3rd floor of the North Garage at SJSU.  It is in row A, and is the 3rd from the left.  It's location is ideal for SJSU students as well as SJSU employees." />
+
+    </LinearLayout>
+
+</ScrollView>

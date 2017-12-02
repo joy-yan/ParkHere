@@ -7,6 +7,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -27,7 +28,6 @@ import com.vansuita.pickimage.listeners.IPickResult;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import butterknife.BindView;
@@ -36,6 +36,7 @@ import butterknife.OnClick;
 import cs160.sjsu.edu.parkme.R;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
 import cs160.sjsu.edu.parkme.ui.widgets.DatePickerFragment;
+import cs160.sjsu.edu.parkme.ui.widgets.TimePickerFragment;
 import cs160.sjsu.edu.parkme.utils.Utils;
 
 /**
@@ -87,14 +88,14 @@ public class OwnerFragment extends BaseFragment {
 
     @OnClick(R.id.edit_ads_start_hour)
     public void setStartHour() {
-        DialogFragment newFragment = new DatePickerFragment(startHour);
+        DialogFragment newFragment = new TimePickerFragment(startHour);
         newFragment.show(getActivity().getSupportFragmentManager(), "TimePicker");
     }
 
 
     @OnClick(R.id.edit_ads_end_hour)
     public void setEndHour() {
-        DialogFragment newFragment = new DatePickerFragment(endHour);
+        DialogFragment newFragment = new TimePickerFragment(endHour);
         newFragment.show(getActivity().getSupportFragmentManager(), "TimePicker");
     }
 
@@ -194,7 +195,7 @@ public class OwnerFragment extends BaseFragment {
             marketRef.setValue(parkingSpot);
             String key = marketRef.getKey();
 
-            mDatabase.child("users").child(uid).push().setValue(key);
+            mDatabase.child("users").child(uid).child("ads").push().setValue(key);
             uploadImage();
             Utils.showToast(getActivity(), getString(R.string.firebase_new_ads_success));
         }
@@ -203,9 +204,6 @@ public class OwnerFragment extends BaseFragment {
     private void uploadImage() {
         if (parkingSpot.getPhotoUrl().length() > 1) {
             Uri file = Uri.fromFile(new File(parkingSpot.getPhotoUrl()));
-            String imgName = parkingSpot.getPhotoUrl()
-                    .substring(parkingSpot.getPhotoUrl().lastIndexOf('/') + 1);
-
             StorageReference photosRef = FirebaseStorage.getInstance().getReference()
                     .child("garages/"+file.getLastPathSegment());
 

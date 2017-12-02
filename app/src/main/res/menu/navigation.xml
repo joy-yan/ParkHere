@@ -9,9 +9,9 @@
 
     <item
         android:id="@+id/navigation_buyer"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/ic_add_shopping_cart_black_24dp"
         android:orderInCategory="1"
-        android:title="@string/title_buyer" />
+        android:title="@string/title_cart" />
 
     <item
         android:id="@+id/navigation_owner"

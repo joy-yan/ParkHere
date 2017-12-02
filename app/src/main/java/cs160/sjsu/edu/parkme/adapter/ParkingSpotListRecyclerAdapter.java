@@ -6,7 +6,10 @@ import android.view.ViewGroup;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 
 
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
@@ -24,12 +27,16 @@ public class ParkingSpotListRecyclerAdapter extends
 
     private static final String Tag = "ParkingSpotListRecyclerAdapter";
 
-//    public ParkingSpotListRecyclerAdapter {
+//    public SchoolListRecyclerAdapter(Class<ParkingSpot> modelClass, int modelLayout,
+//                                     Class<ParkingSpotListViewHolder> viewHolderClass,
+//                                     Query ref, Context context) {
 //
-//        //super(modelClass, modelLayout, viewHolderClass, ref);
-////        mRef = ref.getRef();
-////        mContext = context;
 //
+//
+//
+//        super(modelClass, modelLayout, viewHolderClass, ref);
+//        mRef = ref.getRef();
+//        mContext = context;
 //        mChildEventListener = mRef.addChildEventListener(new ChildEventListener() {
 //
 //            @Override
@@ -56,7 +63,7 @@ public class ParkingSpotListRecyclerAdapter extends
 //
 //            }
 //        });
-//    }
+    //}
 
     /**
      * Initialize a {@linke that listens to a Firebase query. See

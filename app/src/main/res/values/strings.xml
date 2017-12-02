@@ -35,5 +35,9 @@
     <string name="firebase_image_upload_failure">Unable to upload image.</string>
     <string name="firebase_new_ads_success">Create New Ad Successfully!</string>
     <string name="firebase_image_upload_success">Image Uploaded Successfully!</string>
+    <string name="parking_ad_market">Parking Ads</string>
+    <string name="msg_logout">Log Out!</string>
+    <string name="title_cart">Cart</string>
+    <string name="schedule">Schedule</string>
 
 </resources>

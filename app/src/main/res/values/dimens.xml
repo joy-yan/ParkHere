@@ -28,4 +28,5 @@
     <dimen name="logo_image_size">100dp</dimen>
     <dimen name="background_photo_margin">24dp</dimen>
     <dimen name="list_item_view_padding">12dp</dimen>
+    <dimen name="list_detail_image_size">200</dimen>
 </resources>

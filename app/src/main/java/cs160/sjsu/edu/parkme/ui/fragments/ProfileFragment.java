@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment{
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Utils.showToast(getActivity(), "logging out");
+                Utils.showToast(getActivity(), getString(R.string.msg_logout));
                 signOut();
             }
         });

@@ -27,6 +27,7 @@ public class ParkingSpot {
 
     public String start_date = "";
     public String end_date = "";
+
     public String start_time = "";
     public String end_time = "";
 
