@@ -21,8 +21,8 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:text="@string/parking_ad_market"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="24dp" />
+                    android:textColor="@color/light_black"
+                    android:textSize="18dp" />
 
 
                 <!--<ImageButton-->

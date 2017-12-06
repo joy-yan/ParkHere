@@ -17,7 +17,6 @@ import com.google.firebase.storage.StorageReference;
 
 import cs160.sjsu.edu.parkme.R;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
-import cs160.sjsu.edu.parkme.ui.DetailActivity;
 import cs160.sjsu.edu.parkme.utils.ImageStreamingUtil;
 
 import org.parceler.Parcel;

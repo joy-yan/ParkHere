@@ -78,11 +78,12 @@
             <!--</intent-filter>-->
         </activity>
 
-        <activity android:name=".ui.DetailActivity"
+        <activity android:name=".ui.PayActivity"
             android:label="ParkingSpot Detail"
             android:screenOrientation="portrait"
             android:parentActivityName=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
             >
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
@@ -93,6 +94,7 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"
             >
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />
