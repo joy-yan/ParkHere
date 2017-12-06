@@ -40,16 +40,17 @@ public class ParkingSpotListViewHolder extends RecyclerView.ViewHolder
     public void bindView(ParkingSpot item) {
 
         ImageView mItemImageView = (ImageView) mView.findViewById(R.id.parkSpotImageView);
-        TextView textViewItemDesc = (TextView) mView.findViewById(R.id.parkSpotDesc);
+        TextView textViewItemTime = (TextView) mView.findViewById(R.id.parkSpotTimeSlot);
         TextView textViewItemLoc = (TextView) mView.findViewById(R.id.parkSpotAddress);
         ImageStreamingUtil.downloadFromFirebaseStorage(mContext,
                 FirebaseStorage.getInstance().getReference().child(Constants.FIREBASE_STORAGE_PARKINGSPOT_PHOTOS +item.getPhotoUrl()), mItemImageView);
 
-        textViewItemDesc.setText(item.toString());
+        String timeSlot = item.getStartDate() + " at " + item.getStartTime()
+                + " -- " + item.getEndDate() + " at " + item.getEndTime();
+        textViewItemTime.setText(timeSlot);
         textViewItemLoc.setText(item.getAddress());
         mItem = item;
     }
-
 
 
     public static Bitmap decodeFromFirebaseBase64(String image) throws IOException {

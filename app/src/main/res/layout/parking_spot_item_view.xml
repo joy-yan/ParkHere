@@ -1,42 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:paddingHorizontal="@dimen/activity_horizontal_margin"
+    >
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/parkSpotImageView"
         android:layout_margin="@dimen/list_item_view_padding"
         android:src="@drawable/ic_parking_spot_24"
         android:scaleType="centerCrop"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_margin="@dimen/list_item_view_padding"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/parkSpotDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:text="Parking Spot Description"
-            android:textColor="@color/colorPrimary"/>
 
-        <TextView
-            android:id="@+id/parkSpotAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="One Cuisine Type"
-            android:layout_below="@+id/parkSpotDesc"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
-    </LinearLayout>
+    <TextView
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/parkSpotAddress"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/parkSpotImageView"
+        android:text="Parking Spot Address"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
 
 
-</LinearLayout>
+    <TextView
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/parkSpotTimeSlot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/parkSpotAddress"
+        android:layout_below="@id/parkSpotAddress"
+        android:textSize="14dp"
+        android:text="12/01/17 13:00 - 12/03/17 15:00"
+        android:textColor="@color/colorPrimary"/>
+
+    <TextView
+        android:id="@+id/parkSpotPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/parkSpotAddress"
+        android:layout_below="@id/parkSpotTimeSlot"
+        android:text="$2 / hourly"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/parkSpotRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/parkSpotPrice"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="13dp"
+        android:text="Rating: 4.5 / 5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14dp" />
+
+
+</RelativeLayout>
+

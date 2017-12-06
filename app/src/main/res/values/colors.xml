@@ -4,7 +4,7 @@
     <color name="secondary_text">#727272</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
-    <color name="iron">#CCCCCC</color>
+    <color name="iron">#cccccc</color>
     <color name="white">#FFFFFF</color>
 
     <color name="grey">#EDEEEF</color>
@@ -14,7 +14,7 @@
 
     <color name="primary">#83CF1C</color>
     <color name="primary_dark">#5AB831</color>
-    <color name="primary_light">#DCEDC8</color>
+    <color name="primary_light">#dcedc8</color>
 
     <color name="light_black">#747474</color>
     <color name="black">#616161</color>

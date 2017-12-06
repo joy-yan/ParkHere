@@ -19,14 +19,18 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
+import cs160.sjsu.edu.parkme.adapter.FirebaseParkingAdsViewHolder;
+import cs160.sjsu.edu.parkme.adapter.ParkingSpotTouchHelperViewHolder;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
 import cs160.sjsu.edu.parkme.utils.Utils;
 
@@ -36,14 +40,15 @@ import cs160.sjsu.edu.parkme.utils.Utils;
 
 public class OwnerAdsListFragment extends Fragment {
 
-    private FirebaseRecyclerAdapter<ParkingSpot> mAdapter;
+    private FirebaseRecyclerAdapter<ParkingSpot, FirebaseParkingAdsViewHolder> mAdapter;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
     @BindView(R.id.recycler_view_owner_ads_list)
     RecyclerView ownerAdsRecyclerView;
 
-    public OwnerAdsListFragment() {}
+    public OwnerAdsListFragment() {
+    }
 
 
     public static OwnerAdsListFragment newInstance() {
@@ -65,25 +70,25 @@ public class OwnerAdsListFragment extends Fragment {
 
     }
 
-
-    @Override
-    protected void initVariables() {
-
-    }
-
-    @Override
-    protected View initViews(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_owner_ads_list, container, false);
-        ButterKnife.bind(this, rootview);
-        initializeAdapter();
-
-        return rootview;
-    }
-
-    @Override
-    protected void loadData() {
-
-    }
+//
+//    @Override
+//    protected void initVariables() {
+//
+//    }
+//
+//    @Override
+//    protected View initViews(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        View rootview = inflater.inflate(R.layout.fragment_owner_ads_list, container, false);
+//        ButterKnife.bind(this, rootview);
+//        initializeAdapter();
+//
+//        return rootview;
+//    }
+//
+//    @Override
+//    protected void loadData() {
+//
+//    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -110,55 +115,53 @@ public class OwnerAdsListFragment extends Fragment {
     }
 
     private void initializeAdapter() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        String uid = user.getUid();
 
         Query query = FirebaseDatabase.getInstance().getReference().child("market");
         //.orderByChild(Constants.FIREBASE_QUERY_RATING);
 
+        DatabaseReference mAdsIndicesRef = FirebaseDatabase.getInstance()
+                .getReference()
+                .child("chatIndices")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-        FirebaseListOptions<ParkingSpot> options = new FirebaseListOptions.Builder<ParkingSpot>()
-                .setLayout(R.layout.parking_spot_item_view)//Note: The guide doesn't mention this method, without it an exception is thrown that the layout has to be set.
-                .setQuery(query, ParkingSpot.class)
-                .build();
+//        FirebaseListOptions<ParkingSpot> options = new FirebaseListOptions.Builder<ParkingSpot>()
+//                .setLayout(R.layout.parking_spot_item_view)//Note: The guide doesn't mention this method, without it an exception is thrown that the layout has to be set.
+//                .setQuery(query, ParkingSpot.class)
+//                .setLifecycleOwner(this)
+//                .build();
+
+        FirebaseRecyclerOptions<ParkingSpot> options =
+                new FirebaseRecyclerOptions.Builder<ParkingSpot>()
+                        .setIndexedQuery(
+                                mAdsIndicesRef.limitToFirst(50), query.getRef(), ParkingSpot.class)
+                        .setLifecycleOwner(this)
+                        .build();
 
 
-        mAdapter = new FirebaseRecyclerAdapter<ParkingSpot>(options) {
+        mAdapter = new FirebaseRecyclerAdapter<ParkingSpot, FirebaseParkingAdsViewHolder>(options) {
             @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                return null;
+            public FirebaseParkingAdsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                return new FirebaseParkingAdsViewHolder(LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.parking_spot_item_view, parent, false));
             }
 
             @Override
-            protected void onBindViewHolder(RecyclerView.ViewHolder holder, int position, Object model) {
-
+            protected void onBindViewHolder(FirebaseParkingAdsViewHolder holder, int position, ParkingSpot model) {
+                holder.bind(model);
             }
 
             @Override
-            protected void populateView(View v, ParkingSpot model, int position) {
-
-                TextView tvAddress = v.findViewById(R.id.parkSpotAddress);
-                tvAddress.setText(model.getAddress());
-
-                TextView tvDesc = v.findViewById(R.id.parkSpotAddress);
-                tvDesc.setText(model.getDescription());
-
-                ImageView imageView = v.findViewById(R.id.parkSpotImageView);
-                imageView.setImageResource(R.drawable.ic_parking_spot_24);
-
+            public void onDataChanged() {
+                // If there are no chat messages, show a view that invites the user to add a message.
+                //mEmptyListMessage.setVisibility(getItemCount() == 0 ? View.VISIBLE : View.GONE);
             }
         };
 
-        marketListView.setAdapter(mAdapter);
-        marketListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                FragmentManager fm = getActivity().getSupportFragmentManager();
-//                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                Utils.showToast(getActivity(), "You select an ad");
-            }
-        });
 
+
+}
 
 
 //
@@ -183,7 +186,6 @@ public class OwnerAdsListFragment extends Fragment {
 //                mAdapter.notifyDataSetChanged();
 //            }
 //        });
-    }
 
     @Override
     public void onStart() {
@@ -206,12 +208,7 @@ public class OwnerAdsListFragment extends Fragment {
     public void onResume() {
         super.onResume();
     }
+
+
+
 }
-
-
-    public FirebaseRestaurantViewHolder(View itemView) {
-        super(itemView);
-        mView = itemView;
-        mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
-    }

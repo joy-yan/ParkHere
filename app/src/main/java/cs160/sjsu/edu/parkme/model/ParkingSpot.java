@@ -31,11 +31,21 @@ public class ParkingSpot {
     public String start_time = "";
     public String end_time = "";
 
+    public double rating = 0;
+
 
     public String uid = "";
 
     public ParkingSpot() {}
 
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
 
     public String getParkingSpotId() {
         return parkingSpotId;
@@ -119,7 +129,7 @@ public class ParkingSpot {
     }
 
     public void setEndTime(String end_time) {
-        this.start_time = start_time;
+        this.end_time = end_time;
     }
 
     public String getEndTime() {
@@ -131,10 +141,10 @@ public class ParkingSpot {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-//        sb.append(name + "\n")
-//                .append("Address: " + app_due + "\n")
-//                .append("Phone: " + phone + "\n")
-//                .append("Website: " + ParkSpotUrl + "\n");
+        sb.append(description + "\n")
+                .append("Address: " + address + "\n")
+                .append("Phone: " + city + "\n")
+                .append("Website: " + photoUrl+ "\n");
         return sb.toString();
     }
 
