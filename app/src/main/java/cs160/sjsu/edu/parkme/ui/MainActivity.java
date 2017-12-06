@@ -12,14 +12,14 @@ import android.view.MenuItem;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
-import cs160.sjsu.edu.parkme.ui.fragments.BuyerFragment;
+import cs160.sjsu.edu.parkme.ui.fragments.CartFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.MarketFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.OwnerFragment;
 import cs160.sjsu.edu.parkme.ui.fragments.ProfileFragment;
-import cs160.sjsu.edu.parkme.utils.Utils;
 
 
-public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class MainActivity extends BaseActivity implements
+        ViewPager.OnPageChangeListener {
 
     @BindView(R.id.navigation)
     BottomNavigationView navigation;
@@ -30,14 +30,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
-
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
-        viewPager.addOnPageChangeListener(this);
     }
 
 
@@ -50,6 +44,25 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             return true;
         }
     };
+
+    @Override
+    protected void initVariables() {
+
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        viewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        viewPager.addOnPageChangeListener(this);
+    }
+
+    @Override
+    protected void loadData() {
+
+    }
 
 
     /**
@@ -67,16 +80,12 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
             switch (position) {
                 case 0:
-                    Utils.showToast(getApplicationContext(), "market");
                     return MarketFragment.newInstance();
                 case 1:
-                    Utils.showToast(getApplicationContext(), "buyer");
-                    return BuyerFragment.newInstance();
+                    return CartFragment.newInstance();
                 case 2:
-                    Utils.showToast(getApplicationContext(), "owner");
                     return OwnerFragment.newInstance();
                 case 3:
-                    Utils.showToast(getApplicationContext(), "settings");
                     return ProfileFragment.newInstance();
             }
             return null;

@@ -33,7 +33,7 @@
         <item name="android:textColorSecondary">@color/black</item>
     </style>
 
-    <style name="Widget.Udacity.Button.Login" parent="android:Widget.Button">
+    <style name="Widget.ParkHere.Button.Login" parent="android:Widget.Button">
         <item name="android:paddingLeft">18dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:textSize">@dimen/login_buttons_text_size</item>

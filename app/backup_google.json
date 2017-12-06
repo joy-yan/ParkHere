@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "309058769736",
+    "firebase_url": "https://cs160-83826.firebaseio.com",
+    "project_id": "cs160-83826",
+    "storage_bucket": "cs160-83826.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309058769736:android:f04a81a19214da4b",
+        "android_client_info": {
+          "package_name": "cs160.sjsu.edu.parkme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309058769736-e3bm4h71t549rhvb71p4l45vsva8imv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cs160.sjsu.edu.parkme",
+            "certificate_hash": "f9657da90d8bec792356ca8bb8f137805fd64ec2"
+          }
+        },
+        {
+          "client_id": "309058769736-hn5par1mv0h30ujlid19m9gp59m9r42f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5KfvG32UeZPNLQjua0xIB72X4_QIeI9I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309058769736-hn5par1mv0h30ujlid19m9gp59m9r42f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

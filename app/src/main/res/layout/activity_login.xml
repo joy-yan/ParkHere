@@ -24,21 +24,18 @@
             android:focusable="true"
             android:focusableInTouchMode="true" />
 
-        <!--<ImageView-->
-        <!--android:id="@+id/iv_logo_ainuco"-->
-        <!--android:layout_width="@dimen/logo_image_size"-->
-        <!--android:layout_height="@dimen/logo_image_size"-->
-        <!--android:layout_marginBottom="@dimen/lists_title_bottom_margin"-->
-        <!--android:contentDescription="@string/image_view_logo_image"-->
-        <!--android:src="@drawable/ic_doctors" />-->
-
+        <ImageView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/lists_title_bottom_margin"
+        android:contentDescription="@string/image_view_logo_image"
+        android:src="@drawable/logo" />
 
 
         <ImageView
-            android:id="@+id/iv_logo_image"
             android:layout_width="@dimen/logo_image_size"
             android:layout_height="@dimen/logo_image_size"
-            android:layout_marginBottom="@dimen/lists_title_bottom_margin"
+            android:layout_marginBottom="24dp"
             android:contentDescription="@string/image_view_logo_image"
             android:src="@drawable/ic_parking_spot_24" />
 
@@ -86,7 +83,7 @@
 
         <Button
             android:id="@+id/login_with_password"
-            style="@style/Widget.Udacity.Button.Login"
+            style="@style/Widget.ParkHere.Button.Login"
             android:layout_width="match_parent"
             android:layout_height="@dimen/input_field_height"
             android:layout_marginBottom="@dimen/lv_header_text_size"

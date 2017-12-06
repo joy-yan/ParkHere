@@ -2,11 +2,16 @@ package cs160.sjsu.edu.parkme.utils;
 
 
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import cs160.sjsu.edu.parkme.R;
@@ -31,6 +36,7 @@ public class ImageStreamingUtil {
 //                .crossFade()
 //                .into(imageView);
     }
+
 
 
 

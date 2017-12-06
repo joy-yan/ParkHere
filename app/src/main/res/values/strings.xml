@@ -17,4 +17,27 @@
     <string name="text_dont_have_account">Account doesn\'t exist</string>
     <string name="button_create_account">Create Account</string>
     <string name="title_settings">Settings</string>
+    <string name="startTime">Start at:</string>
+    <string name="endTime">End at:</string>
+    <string name="submit_order">Submit Order!</string>
+    <string name="parking_address">Address: </string>
+    <string name="parking_city">City: </string>
+    <string name="parking_ads_start_date">Start Date: </string>
+    <string name="parking_ads_duration">Offering Days: </string>
+
+    <string name="parking_end">End at: </string>
+    <string name="submit_parking_ads">Submit!</string>
+    <string name="create_parking_ads">Create Parking Ads:</string>
+    <string name="parking_description">Decription:</string>
+    <string name="parking_daily_rate">Daily Rate ($):</string>
+    <string name="parking_ads_end_date">End Date:</string>
+    <string name="parking_ads_start_time">Time:</string>
+    <string name="firebase_image_upload_failure">Unable to upload image.</string>
+    <string name="firebase_new_ads_success">Create New Ad Successfully!</string>
+    <string name="firebase_image_upload_success">Image Uploaded Successfully!</string>
+    <string name="parking_ad_market">Parking Ads</string>
+    <string name="msg_logout">Log Out!</string>
+    <string name="title_cart">Cart</string>
+    <string name="schedule">Schedule</string>
+
 </resources>

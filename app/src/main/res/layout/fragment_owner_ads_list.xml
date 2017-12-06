@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_fragment_market"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/grey"
+    >
+    <RelativeLayout
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textSize="24dp"
+            android:textColor="@color/colorAccent"
+            android:text="@string/parking_ad_market"
+            android:layout_alignParentLeft="true"
+            />
+
+
+        <ImageButton
+            android:id="@+id/ibtn_show_my_ads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_sort_black_24dp"
+            android:tint="@color/colorAccent"
+            android:background="@null"
+            />
+    </RelativeLayout>
+    <!--<ListView-->
+        <!--android:id="@+id/marketListview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+        <!--&gt;-->
+    <!--</ListView>-->
+
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/recycler_view_owner_ads_list"
+    android:layout_width="match_parent"
+    android:clipToPadding="false"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:scrollbars="none" />
+
+</LinearLayout>

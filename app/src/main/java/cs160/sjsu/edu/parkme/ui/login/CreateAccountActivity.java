@@ -48,7 +48,7 @@ public class CreateAccountActivity extends BaseActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
         ButterKnife.bind(this);
@@ -61,6 +61,21 @@ public class CreateAccountActivity extends BaseActivity {
          * Link layout elements from XML and setup the progress dialog
          */
         initializeScreen();
+    }
+
+    @Override
+    protected void initVariables() {
+
+    }
+
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+
+    }
+
+    @Override
+    protected void loadData() {
+
     }
 
     /**
