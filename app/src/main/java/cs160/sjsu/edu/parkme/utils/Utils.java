@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.text.SimpleDateFormat;
 
 public class Utils {
@@ -46,13 +49,15 @@ public class Utils {
         return userEmail.replace(",", ".");
     }
 
-    public static long getCurrentTime() { return System.currentTimeMillis(); }
-
+    public static long getCurrentTime() {
+        return System.currentTimeMillis();
+    }
 
 
     public static void showToast(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
+
     public static void putPref(String key, String value, Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = prefs.edit();
@@ -64,5 +69,12 @@ public class Utils {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         return preferences.getString(key, null);
     }
+
+    public static String getUid() {
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        return currentUser.getUid();
+    }
+
+
 
 }

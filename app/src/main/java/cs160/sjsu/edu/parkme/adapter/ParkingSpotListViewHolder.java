@@ -42,8 +42,8 @@ public class ParkingSpotListViewHolder extends RecyclerView.ViewHolder
         ImageView mItemImageView = (ImageView) mView.findViewById(R.id.parkSpotImageView);
         TextView textViewItemTime = (TextView) mView.findViewById(R.id.parkSpotTimeSlot);
         TextView textViewItemLoc = (TextView) mView.findViewById(R.id.parkSpotAddress);
-        ImageStreamingUtil.downloadFromFirebaseStorage(mContext,
-                FirebaseStorage.getInstance().getReference().child(Constants.FIREBASE_STORAGE_PARKINGSPOT_PHOTOS +item.getPhotoUrl()), mItemImageView);
+//        ImageStreamingUtil.downloadFromFirebaseStorage(mContext,
+//                FirebaseStorage.getInstance().getReference().child(Constants.FIREBASE_STORAGE_PARKINGSPOT_PHOTOS +item.getPhotoUrl()), mItemImageView);
 
         String timeSlot = item.getStartDate() + " at " + item.getStartTime()
                 + " -- " + item.getEndDate() + " at " + item.getEndTime();

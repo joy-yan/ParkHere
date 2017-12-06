@@ -1,5 +1,6 @@
 package cs160.sjsu.edu.parkme.ui.fragments;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -35,6 +36,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cs160.sjsu.edu.parkme.R;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
+import cs160.sjsu.edu.parkme.ui.MyAdsListAcitivity;
 import cs160.sjsu.edu.parkme.ui.widgets.DatePickerFragment;
 import cs160.sjsu.edu.parkme.ui.widgets.TimePickerFragment;
 import cs160.sjsu.edu.parkme.utils.Utils;
@@ -153,7 +155,8 @@ public class OwnerFragment extends BaseFragment {
 
     @OnClick(R.id.ibtn_show_my_ads)
     public void showMyAds() {
-
+        Intent intent = new Intent(getActivity(), MyAdsListAcitivity.class);
+        startActivity(intent);
     }
 
     @OnClick(R.id.btn_submit_new_ads)
@@ -194,8 +197,9 @@ public class OwnerFragment extends BaseFragment {
             DatabaseReference marketRef = mDatabase.child("market").push();
             marketRef.setValue(parkingSpot);
             String key = marketRef.getKey();
+            parkingSpot.setParkingSpotId(key);
 
-            mDatabase.child("users").child(uid).child("ads").push().setValue(key);
+            mDatabase.child("users").child(uid).child("ads").push().setValue(parkingSpot);
             uploadImage();
             Utils.showToast(getActivity(), getString(R.string.firebase_new_ads_success));
         }

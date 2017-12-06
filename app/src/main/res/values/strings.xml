@@ -39,5 +39,6 @@
     <string name="msg_logout">Log Out!</string>
     <string name="title_cart">Cart</string>
     <string name="schedule">Schedule</string>
+    <string name="parking_ad_orders">My Orders</string>
 
 </resources>
