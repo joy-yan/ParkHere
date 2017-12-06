@@ -1,5 +1,6 @@
 package cs160.sjsu.edu.parkme.ui.fragments;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -33,6 +34,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import org.parceler.Parcels;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
@@ -42,6 +45,7 @@ import cs160.sjsu.edu.parkme.adapter.ParkingSpotListRecyclerAdapter;
 import cs160.sjsu.edu.parkme.adapter.ParkingSpotListViewHolder;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
 import cs160.sjsu.edu.parkme.ui.BaseActivity;
+import cs160.sjsu.edu.parkme.ui.DetailActivity;
 import cs160.sjsu.edu.parkme.utils.Constants;
 import cs160.sjsu.edu.parkme.utils.Utils;
 
@@ -124,71 +128,7 @@ public class MarketFragment extends BaseFragment {
 //        });
     }
 
-//    private void initializeAdapter() {
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        String uid = user.getUid();
-//
-//        Query query = FirebaseDatabase.getInstance().getReference().child("market");
-//        //.orderByChild(Constants.FIREBASE_QUERY_RATING);
-//
-//
-//        FirebaseListOptions<ParkingSpot> options = new FirebaseListOptions.Builder<ParkingSpot>()
-//                .setLayout(R.layout.parking_spot_item_view)//Note: The guide doesn't mention this method, without it an exception is thrown that the layout has to be set.
-//                .setQuery(query, ParkingSpot.class)
-//                .build();
-//
-//
-//        mAdapter = new FirebaseListAdapter<ParkingSpot>(options) {
-//            @Override
-//            protected void populateView(View v, ParkingSpot model, int position) {
-//
-//                TextView tvAddress = v.findViewById(R.id.parkSpotAddress);
-//                tvAddress.setText(model.getAddress());
-//
-//                TextView tvDesc = v.findViewById(R.id.parkSpotAddress);
-//                tvDesc.setText(model.getDescription());
-//
-//                ImageView imageView = v.findViewById(R.id.parkSpotImageView);
-//                imageView.setImageResource(R.drawable.ic_parking_spot_24);
-//
-//            }
-//        };
-//
-//        marketListView.setAdapter(mAdapter);
-//        marketListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-////                FragmentManager fm = getActivity().getSupportFragmentManager();
-////                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-//                Utils.showToast(getActivity(), "You select an ad");
-//            }
-//        });
 
-
-
-//
-//        mAdapter = new ParkingSpotListRecyclerAdapter(ParkingSpot.class,
-//                R.layout.parking_spot_item_view, ParkingSpotListViewHolder.class,
-//                query, getActivity());
-//
-//        mRecyclerView.setHasFixedSize(true);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        mRecyclerView.setAdapter(mAdapter);
-//
-//        mAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
-//            @Override
-//            public void onItemRangeInserted(int positionStart, int itemCount) {
-//                super.onItemRangeInserted(positionStart, itemCount);
-//                mAdapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onItemRangeChanged(int positionStart, int itemCount) {
-//                super.onItemRangeChanged(positionStart, itemCount);
-//                mAdapter.notifyDataSetChanged();
-//            }
-//        });
-   // }
 
     private void initializeAdapter() {
 
@@ -204,31 +144,24 @@ public class MarketFragment extends BaseFragment {
                         .build();
 
 
-//        mAdapter = new FirebaseRecyclerAdapter<ParkingSpot, AdsHolder>(options) {
-//            @Override
-//            public AdsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//                return new AdsHolder(LayoutInflater.from(parent.getContext())
-//                        .inflate(R.layout.parking_spot_item_view, parent, false));
-//            }
-//
-//            @Override
-//            protected void onBindViewHolder(AdsHolder holder,
-//                                            int position, ParkingSpot model) {
-//                holder.bind(model);
-//            }
-//
-//            @Override
-//            public void onDataChanged() {
-//                // If there are no chat messages, show a view that invites the user to add a message.
-//                //mEmptyListMessage.setVisibility(getItemCount() == 0 ? View.VISIBLE : View.GONE);
-//            }
-//        };
-
         mAdapter = new FirebaseRecyclerAdapter<ParkingSpot, AdsHolder>(options) {
+
             @Override
             public AdsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.parking_spot_item_view, parent, false);
+
+                view.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        int itemPosition = marketListView.getChildAdapterPosition(v);
+                        ParkingSpot item = mAdapter.getItem(itemPosition);
+                        Intent intent = new Intent(getActivity(), DetailActivity.class);
+                        intent.putExtra("PARKING_SPOT_DETAIL", Parcels.wrap(mAdapter.getItem(itemPosition)));
+                        getActivity().startActivity(intent);
+                    }
+                });
 
                 return new AdsHolder(view, getActivity());
             }

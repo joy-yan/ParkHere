@@ -15,6 +15,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import cs160.sjsu.edu.parkme.R;
+import cs160.sjsu.edu.parkme.adapter.GlideApp;
 
 /**
  * Created by joyyan on 4/7/17.
@@ -24,17 +25,27 @@ public class ImageStreamingUtil {
 
     private static final String TAG = ImageStreamingUtil.class.getName();
 
-    public static void downloadFromFirebaseStorage(Context mContext,
-                                                   StorageReference ref, ImageView imageView) {
-//        Glide.with(mContext)
-//                .using(new FirebaseImageLoader())
-//                .load(ref)
-//                .error(R.drawable.ic_parking_spot_24)
-//                .placeholder(R.drawable.ic_parking_spot_24)     //设置占位图片
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .centerCrop()
-//                .crossFade()
-//                .into(imageView);
+    public static void loadImage(Context mContext,
+                                 ImageView imageView,
+                                 String imagePath) {
+
+        StorageReference storageReference =
+                FirebaseStorage.getInstance().getReference()
+                        .child("garages");
+
+        if (imagePath.equals("") ||
+                (imagePath == null)) {
+            imageView.setImageResource(R.drawable.ic_parking_spot_24);
+        } else {
+            int index = imagePath.lastIndexOf("/");
+            String imageName = imagePath.substring(
+                    index+1
+            );
+            GlideApp.with(mContext)
+                    .load(storageReference.child(imageName))
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(imageView);
+        }
     }
 
 

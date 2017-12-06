@@ -78,6 +78,26 @@
             <!--</intent-filter>-->
         </activity>
 
+        <activity android:name=".ui.DetailActivity"
+            android:label="ParkingSpot Detail"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
+        <activity android:name=".ui.MyAdsListAcitivity"
+            android:label="ParkingSpot Detail"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
