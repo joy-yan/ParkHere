@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 import cs160.sjsu.edu.parkme.R;
 import cs160.sjsu.edu.parkme.adapter.AdsHolder;
 import cs160.sjsu.edu.parkme.model.ParkingSpot;
-import cs160.sjsu.edu.parkme.ui.DetailActivity;
+import cs160.sjsu.edu.parkme.ui.PayActivity;
 import cs160.sjsu.edu.parkme.utils.Utils;
 
 /**
@@ -134,7 +134,7 @@ public class CartFragment extends BaseFragment {
                     public void onClick(View v) {
                         int itemPosition = orderRecyclerView.getChildAdapterPosition(v);
                         ParkingSpot item = mAdapter.getItem(itemPosition);
-                        Intent intent = new Intent(getActivity(), DetailActivity.class);
+                        Intent intent = new Intent(getActivity(), PayActivity.class);
                         intent.putExtra("PARKING_SPOT_DETAIL", Parcels.wrap(mAdapter.getItem(itemPosition)));
                         getActivity().startActivity(intent);
                     }
